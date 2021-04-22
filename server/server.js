@@ -20,6 +20,18 @@ app.get("/races", (req, res) => {
   }
 })
 
+app.get("/subraces", (req, res) => {
+  if (!req.query.name) {
+    res.json(subRaces);
+  } else {
+    for (const subRace of subRaces) {
+      if (subRace.name.toLowerCase() === req.query.name.toLowerCase()) {
+        res.json(subRace);
+      }
+    }
+  }
+})
+
 app.get("/races/:id", (req, res) => {
   res.json(races[req.params.id - 1])
 })
