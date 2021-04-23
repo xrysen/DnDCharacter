@@ -34,6 +34,7 @@ const RaceButtonGroup = () => {
             return (
               <Button
                 key={item.id}
+                onClick={()=> console.log("Clicked")}
                 style={{ marginTop: "10px" }}
               >
                 {item.name}
